@@ -17,12 +17,10 @@ using namespace std;
 int main()
 {
    string s = "Esto es una prueba";
-   string x = substring(s,2,10);
-   cout << x << endl; // muestra: to es un
-   x = substring(s,5);
-   cout << x << endl; // muestra: es una prueba
-
-   return 0;
+   int p = indexOf(s,"sto");
+   cout << p << endl; // muestra: 8
+   p = indexOf(s,"jamon");
+   cout << p << endl; // muestra: algun valor negativo
 }
 
 #endif

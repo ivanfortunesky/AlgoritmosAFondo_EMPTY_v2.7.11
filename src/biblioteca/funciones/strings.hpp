@@ -24,33 +24,48 @@ int charCount(string s,char c)
 string substring(string s,int d,int h)
 {
    string x="";
-   for (int i=d-1;i<h;i++){x=x+s[i];}
+   for (int i=d-1;i<h;i++){x+=s[i];}
    return x;
 }
 
-string substring(string s,int d) // ok
+string substring(string s,int d) // substring sobrecarga length(s)
 {
    string x="";
-   for (int i=d-1;i<length(s);i++){x=x+s[i];}
+   for (int i=d-1;i<length(s);i++){x+=s[i];}
    return x;
 }
 
-int indexOf(string s,char c) // ok
-{
-   return 0;
+int indexOf(string s,char c) // Descripción: Retorna la posición que ocupa la primera ocurrencia del carácter c
+                             //              dentro de la cadena s
+{  for (int i=0;i<length(s);i++){if (s[i]==c){return i;}}
+   return -1;
 }
 
-int indexOf(string s,char c,int offSet) // ok
-{
-   return 0;
+int indexOf(string s,char c,int offSet) // sobrecarga  -    offSet
+{ for (int i=offSet;i<length(s);i++){if (s[i]==c){return i;}}
+   return -1;
 }
 
-int indexOf(string s,string toSearch) // ok
+int indexOf(string s,string toSearch) // sobrecarga - toSearch
 {
-   return 0;
+   int indice, cont=0, aux=0;
+   for (int i=0;i<length(s);i++){
+      if (s[i]==toSearch[0]){
+         indice =i;
+         for (int j=0;j<length(toSearch);j++){
+                  if (s[i+j]==toSearch[j]){
+                     cont++;}
+                     aux++;}
+         //if (s[indice-1]==' ' || s[indice-1]=='\0' ){
+         if (cont == length(toSearch) && (s[i+length(toSearch)]== ' ' || s[i+length(toSearch)]== '\0' )) {return indice;}
+         }
+      cont=0; }
+
+
+     return -1;
 }
 
-int indexOf(string s,string toSearch,int offset) // ok
+int indexOf(string s,string toSearch,int offset) // pend
 {
    return 0;
 }
@@ -90,12 +105,12 @@ string intToString(int i)
    return "";
 }
 
-int stringToInt(string s,int b) // ok
+int stringToInt(string s,int b) // pend
 {
    return 0;
 }
 
-int stringToInt(string s) // ok
+int stringToInt(string s) // pend
 {
    return 0;
 }
