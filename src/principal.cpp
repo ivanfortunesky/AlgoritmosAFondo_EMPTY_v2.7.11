@@ -16,11 +16,21 @@ using namespace std;
 
 int main()
 {
-   string s = "Esto es una prueba";
-   int p = indexOf(s,"sto");
-   cout << p << endl; // muestra: 8
-   p = indexOf(s,"jamon");
-   cout << p << endl; // muestra: algun valor negativo
+   string s = "uno**dos*tres*cuatro**";
+   int p = indexOfN(s,'*',1);
+   cout << p << endl; // muestra:
+
+   p = indexOfN(s,'*',2);
+   cout << p << endl; // muestra:
+
+   p = indexOfN(s,'*',3);
+   cout << p << endl; // muestra:
+
+   p = indexOfN(s,'*',4);
+   cout << p << endl; // muestra:
+
+   p = indexOfN(s,'*',5);
+   cout << p << endl; // muestra:
 }
 
 #endif

@@ -6,14 +6,14 @@
 #include <math.h>
 using namespace std;
 
-int length(string s)
+int length(string s) // 1.1.1.1. Función length
 {
    int i=0;
    while (s[i]!= '\0') {i++;}
    return i;
 }
 
-int charCount(string s,char c)
+int charCount(string s,char c) // 1.1.1.2. Función charCount
 {int i=0;
    for (int j=0;j<length(s);j++){
       if (s[j]==c){i++;}
@@ -21,67 +21,87 @@ int charCount(string s,char c)
    return i;
 }
 
-string substring(string s,int d,int h)
+string substring(string s,int d,int h) // 1.1.1.3. Función substring
 {
    string x="";
    for (int i=d-1;i<h;i++){x+=s[i];}
    return x;
 }
 
-string substring(string s,int d) // substring sobrecarga length(s)
+string substring(string s,int d) // 1.1.1.4. Función substring (sobrecarga)
 {
    string x="";
    for (int i=d-1;i<length(s);i++){x+=s[i];}
    return x;
 }
 
-int indexOf(string s,char c) // Descripción: Retorna la posición que ocupa la primera ocurrencia del carácter c
+int indexOf(string s,char c) // 1.1.1.5. Función indexOf
+                             // Descripción: Retorna la posición que ocupa la primera ocurrencia del carácter c
                              //              dentro de la cadena s
 {  for (int i=0;i<length(s);i++){if (s[i]==c){return i;}}
    return -1;
 }
 
-int indexOf(string s,char c,int offSet) // sobrecarga  -    offSet
+int indexOf(string s,char c,int offSet) // sobrecarga  -    offSet - 1.1.1.6. Función indexOf (sobrecarga)
 { for (int i=offSet;i<length(s);i++){if (s[i]==c){return i;}}
    return -1;
 }
 
-int indexOf(string s,string toSearch) // sobrecarga - toSearch
+int indexOf(string s,string toSearch) // sobrecarga - toSearch - 1.1.1.7. Función indexOf (sobrecarga)
 {
-   int indice, cont=0, aux=0;
+   int indice, cont=0;
    for (int i=0;i<length(s);i++){
       if (s[i]==toSearch[0]){
          indice =i;
          for (int j=0;j<length(toSearch);j++){
                   if (s[i+j]==toSearch[j]){
-                     cont++;}
-                     aux++;}
-         //if (s[indice-1]==' ' || s[indice-1]=='\0' ){
-         if (cont == length(toSearch) && (s[i+length(toSearch)]== ' ' || s[i+length(toSearch)]== '\0' )) {return indice;}
-         }
+                     cont++;}}
+         if (indice >0 && cont == length(toSearch) && (s[indice-1]==' ' || s[indice-1]=='\0' ) && (s[i+length(toSearch)]== ' ' || s[i+length(toSearch)]== '\0' )) {return indice;}
+         else if (indice == 0 && cont == length(toSearch) && (s[i+length(toSearch)]== ' ' || s[i+length(toSearch)]== '\0' )) {return indice;}
+      }
       cont=0; }
-
-
      return -1;
 }
 
-int indexOf(string s,string toSearch,int offset) // pend
+int indexOf(string s,string toSearch,int offset) // 1.1.1.8. Función indexOf (sobrecarga)
 {
-   return 0;
+   int indice, cont=0;
+   for (int i=offset;i<length(s);i++){
+      if (s[i]==toSearch[0]){
+         indice =i;
+         for (int j=0;j<length(toSearch);j++){
+                  if (s[i+j]==toSearch[j]){
+                     cont++;}}
+         if (indice >0 && cont == length(toSearch) && (s[indice-1]==' ' || s[indice-1]=='\0' ) && (s[i+length(toSearch)]== ' ' || s[i+length(toSearch)]== '\0' )) {return indice;}
+         else if (indice == 0 && cont == length(toSearch) && (s[i+length(toSearch)]== ' ' || s[i+length(toSearch)]== '\0' )) {return indice;}
+      }
+      cont=0; }
+   return -1;
 }
 
-int lastIndexOf(string s,char c)
+int lastIndexOf(string s,char c) // última ocurrencia del carácter c dentro de s - 1.1.1.9. Función lastIndexOf
 {
-   return 0;
+   int indice =-1;
+   for (int i=0;i<length(s);i++){if (s[i]==c){indice = i;}}
+   return indice;
 }
 
-int indexOfN(string s,char c,int n)
+int indexOfN(string s,char c,int n) //  - 1.1.1.10. Función indexOfN
 {
-   return 0;
+   int indice =-1,countN=1;
+   for (int i=0;i<length(s);i++){
+      if (s[i]==c){
+         indice = i;
+         if (countN==n)return indice;
+         countN++;
+      }
+   }
+   return indice;
 }
 
-int charToInt(char c)
+int charToInt(char c) // Pend -
 {
+
    return 0;
 }
 
