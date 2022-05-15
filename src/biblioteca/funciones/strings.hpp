@@ -121,9 +121,13 @@ char intToChar(int i) // 1.1.1.12. Función intToChar
    else return 0;
 }
 
-int getDigit(int n,int i)
+int getDigit(int n,int i) // 1.1.1.13. Función getDigit
 {
-   return 0;
+    while (i>0) {
+        n /= 10; // n = n /10
+        i--;
+    }
+    return (n % 10);
 }
 
 int digitCount(int n)

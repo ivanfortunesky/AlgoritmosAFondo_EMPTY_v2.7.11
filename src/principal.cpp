@@ -16,9 +16,25 @@ using namespace std;
 
 int main()
 {
-   int i = 60;
-   char c = intToChar(i);
-   cout << c << endl; // muestra: 2
+   int n = 123456;
+   int i = 5;
+   int r = getDigit(n,i);
+   cout << r << endl; // muestra: 1
+   i = 4;
+   r = getDigit(n,i);
+   cout << r << endl; // muestra: 2
+   i = 3;
+   r = getDigit(n,i);
+   cout << r << endl; // muestra: 3
+   i = 2;
+   r = getDigit(n,i);
+   cout << r << endl; // muestra: 4
+   i = 1;
+   r = getDigit(n,i);
+   cout << r << endl; // muestra: 5
+   i = 0;
+   r = getDigit(n,i);
+   cout << r << endl; // muestra: 6
 
 }
 
