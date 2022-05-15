@@ -16,21 +16,10 @@ using namespace std;
 
 int main()
 {
-   string s = "uno**dos*tres*cuatro**";
-   int p = indexOfN(s,'*',1);
-   cout << p << endl; // muestra:
+   int i = 60;
+   char c = intToChar(i);
+   cout << c << endl; // muestra: 2
 
-   p = indexOfN(s,'*',2);
-   cout << p << endl; // muestra:
-
-   p = indexOfN(s,'*',3);
-   cout << p << endl; // muestra:
-
-   p = indexOfN(s,'*',4);
-   cout << p << endl; // muestra:
-
-   p = indexOfN(s,'*',5);
-   cout << p << endl; // muestra:
 }
 
 #endif

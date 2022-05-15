@@ -99,15 +99,26 @@ int indexOfN(string s,char c,int n) //  - 1.1.1.10. Función indexOfN
    return indice;
 }
 
-int charToInt(char c) // Pend -
+int charToInt(char c) //  - 1.1.1.11. Función charToInt
 {
-
-   return 0;
+   int a;
+   a=c;
+   a-=48;
+   if (a>9)a-=7;
+   if (a>35)a-=6;
+   if (a<62)return a;
+   else return 0;
 }
 
-char intToChar(int i)
+char intToChar(int i) // 1.1.1.12. Función intToChar
 {
-   return 'X';
+   char a;
+   a=i;
+   a+=48;
+   if (a>57)a+=7;
+   if (a>90)a+=6;
+   if (a<123)return a;
+   else return 0;
 }
 
 int getDigit(int n,int i)
