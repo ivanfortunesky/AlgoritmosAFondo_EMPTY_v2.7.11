@@ -140,9 +140,11 @@ int digitCount(int n) // 1.1.1.14. Función digitCount
    return i;
 }
 
-string intToString(int i)
+string intToString(int i)  // 1.1.1.15. Función intToString
 {
-   return "";
+   string x="";
+   x = to_string(i);
+   return x;
 }
 
 int stringToInt(string s,int b) // pend

@@ -16,17 +16,9 @@ using namespace std;
 
 int main()
 {
-   int n = 0;
-   int i = digitCount(n);
-   cout << i << endl; // muestra: 1
-
-   n = -10;
-   i = digitCount(n);
-   cout << i << endl; // muestra: 2
-
-   n = 1;
-   i = digitCount(n);
-   cout << i << endl; // muestra: 7
+   int i = 123456;
+   string s = intToString(i);
+   cout << s << endl; // muestra: 12345
 }
 
 #endif
