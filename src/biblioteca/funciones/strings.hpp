@@ -130,9 +130,14 @@ int getDigit(int n,int i) // 1.1.1.13. Función getDigit
     return (n % 10);
 }
 
-int digitCount(int n)
+int digitCount(int n) // 1.1.1.14. Función digitCount
 {
-   return 0;
+   int i=1;
+   //if (n==0) return 1;
+   while (abs(n)>1) {
+          n /= 10; // n = n /10
+          i++;}
+   return i;
 }
 
 string intToString(int i)
