@@ -16,9 +16,11 @@ using namespace std;
 
 int main()
 {
-   int i = 123456;
-   string s = intToString(i);
-   cout << s << endl; // muestra: 12345
+   string s = "10";
+   int i = stringToInt(s,5);
+   cout << i << endl; // muestra: 10
+   i = stringToInt(s,16);
+   cout << i << endl; // muestra: 2
 }
 
 #endif

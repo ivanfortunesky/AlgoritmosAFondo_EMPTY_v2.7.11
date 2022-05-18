@@ -110,6 +110,8 @@ int charToInt(char c) //  - 1.1.1.11. Función charToInt
    else return 0;
 }
 
+
+
 char intToChar(int i) // 1.1.1.12. Función intToChar
 {
    char a;
@@ -147,9 +149,21 @@ string intToString(int i)  // 1.1.1.15. Función intToString
    return x;
 }
 
-int stringToInt(string s,int b) // pend
+int stringToInt(string s,int b) // 1.1.1.16. Función stringToInt
 {
-   return 0;
+   int i = length(s)-1;
+   int j=0;
+
+   int suma=0;
+      //log(b,i);
+   while(i>=0){
+
+      suma += charToInt(char(s[i]))*pow(b,j);
+      cout<<"suma "<<suma<<" i: "<<i<<endl;
+      i--,j++;}
+
+
+ return suma;
 }
 
 int stringToInt(string s) // pend
