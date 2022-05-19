@@ -12,15 +12,15 @@
 #include "biblioteca/tads/Stack.hpp"
 #include "biblioteca/tads/Queue.hpp"
 #include "biblioteca/tads/Coll.hpp"
+
 using namespace std;
 
 int main()
 {
-   string s = "10";
-   int i = stringToInt(s,5);
-   cout << i << endl; // muestra: 10
-   i = stringToInt(s,16);
-   cout << i << endl; // muestra: 2
+   char c = 'A';
+   string s = charToString(c);
+   cout << s << endl; // muestra: A
+   cout << length(s) << endl; // muestra: 1
 }
 
 #endif

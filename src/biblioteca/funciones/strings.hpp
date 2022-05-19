@@ -1,6 +1,7 @@
 #ifndef _TSTRINGS_T_
 #define _TSTRINGS_T_
 
+#include "potencia.hpp"
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
@@ -152,28 +153,32 @@ string intToString(int i)  // 1.1.1.15. Función intToString
 int stringToInt(string s,int b) // 1.1.1.16. Función stringToInt
 {
    int i = length(s)-1;
-   int j=0;
-
+   int j=0;   //int pot;
    int suma=0;
       //log(b,i);
    while(i>=0){
-
-      suma += charToInt(char(s[i]))*pow(b,j);
-      cout<<"suma "<<suma<<" i: "<<i<<endl;
+      suma += charToInt(char(s[i]))*potencia(b,j);
       i--,j++;}
-
-
- return suma;
+   return suma;
 }
 
-int stringToInt(string s) // pend
+int stringToInt(string s) // 1.1.1.17. Función stringToInt (sobrecarga)
 {
-   return 0;
+   int i = length(s)-1;
+   int j=0;   //int pot;
+   int suma=0;
+      //log(b,i);
+   while(i>=0){
+      suma += charToInt(char(s[i]))*potencia(10,j);
+      i--,j++;}
+   return suma;
 }
 
-string charToString(char c)
+string charToString(char c) // 1.1.1.18. Función charToString
 {
-   return "";
+   string x="";
+   x += c;
+   return x;
 }
 
 char stringToChar(string s)
