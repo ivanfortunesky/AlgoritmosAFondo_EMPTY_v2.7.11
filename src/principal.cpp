@@ -12,15 +12,18 @@
 #include "biblioteca/tads/Stack.hpp"
 #include "biblioteca/tads/Queue.hpp"
 #include "biblioteca/tads/Coll.hpp"
+#include "biblioteca/funciones/fibonacci.hpp"
 
 using namespace std;
 
 int main()
 {
-   char c = 'A';
-   string s = charToString(c);
-   cout << s << endl; // muestra: A
-   cout << length(s) << endl; // muestra: 1
+   //double d = 1255553.45;
+   double s = fib(6);
+   cout << s << endl; // muestra: 123.4
+
+
+
 }
 
 #endif

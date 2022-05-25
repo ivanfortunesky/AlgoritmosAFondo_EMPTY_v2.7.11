@@ -181,20 +181,43 @@ string charToString(char c) // 1.1.1.18. Función charToString
    return x;
 }
 
-char stringToChar(string s)
+char stringToChar(string s) // 1.1.1.19. Función stringToChar
 {
-   return 'X';
+   char c;
+   c = s[0];
+   return c;
 }
 
-string stringToString(string s)
+string stringToString(string s) // 1.1.1.20. Función stringToString
 {
-   return "";
+   string x="";
+   x=s;
+   return x;
 }
 
-string doubleToString(double d)
-{
-   return "";
+//string doubleToString(double d)  // Pend corregir  1.1.1.21. Función doubleToString
+//{        // Debe mostrar "123.4"
+ //  return to_string(d);
+//}
+
+string doubleToString(double d)  // Pend corregir  1.1.1.21. Función doubleToString
+{        // Debe mostrar "123.4"
+   string newString="";
+   int count =0, entero;
+   entero=d;
+   newString = to_string(entero);
+   double e= d - entero;
+   while (d>entero && count<10){
+      d *=10;
+      count++;
+      entero = d;
+   }
+   e *= potencia(10,count);
+   newString +="."+to_string(int(e));
+
+   return newString;
 }
+
 
 double stringToDouble(string s)
 {
